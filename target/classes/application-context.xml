@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    
+<!--     importing spring-config.xml file --> 
+    <import resource ="classpath:spring-config.xml"></import>
+
+	<!-- scanning for the packages where spring controllers are placed -->
+	<context:component-scan base-package = "com.ektha.spring.cms.controller">
+	</context:component-scan>    
+ 
+    
+    <!--  Reolves logical string based views to actual view pages -->
+    <bean  id = "viewResolver"
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean> 
+    
+
+</beans>
+ 
+ 
