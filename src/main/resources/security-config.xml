@@ -10,6 +10,7 @@
     <http auto-config="true">
     	<!-- Filter that intercepts the url matching given pateern-->
         <intercept-url pattern="/customer/**" access="hasAuthority('ADMIN')" />
+	    
         
         <!--  We have disabled csrf filter for now -->
         <csrf disabled="true" />
